@@ -19,7 +19,9 @@
   "scripts": {
     "test": "standard && mocha --no-timeouts",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --no-timeouts",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "chromedriver": "^2.27.3",
@@ -30,7 +32,8 @@
     "portfinder-sync": "0.0.2",
     "selenium-webdriver": "^3.1.0",
     "which": "^1.2.12",
-    "yargs": "^6.6.0"
+    "yargs": "^6.6.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -39,5 +42,6 @@
     "mocha": "^3.2.0",
     "standard": "^8.6.0",
     "test-console": "^1.0.0"
-  }
+  },
+  "snyk": true
 }
